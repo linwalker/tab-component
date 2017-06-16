@@ -1,0 +1,27 @@
+{
+  "name": "tab-component",
+  "version": "1.0.0",
+  "description": "react tab component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linwalker/tab-component.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "sass"
+  ],
+  "author": "linwalker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linwalker/tab-component/issues"
+  },
+  "homepage": "https://github.com/linwalker/tab-component#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
