@@ -12,16 +12,6 @@ module.exports = {
         publicPath: '/static/',
     },
     module: {
-        // loaders: [
-        //     {
-        //         test: /\.js$/,
-        //         include: [
-        //             path.resolve(__dirname, 'js'),
-        //         ],
-        //         exclude: /node_modules/,
-        //         loaders: ['babel-loader'],
-        //     },
-        // ]
         rules: [
             {
                 test: /\.js$/,
