@@ -1,8 +1,23 @@
 var path = require('path');
 var express = require('express');
+var webpack = require('webpack');
+var config = require('./webpack.config');
 
 var app = express();
-app.use(express.static(path.join(__dirname,'build')));
+var compiler = webpack(config);
+
+var webpackDevOptions = {
+  noInfo: true,
+  historyApiFallback: true,
+  publicPath: config.output.publicPath,
+  headers: {
+    'Access-Control-Allow-Origin': '*'
+  }
+};
+
+app.use(require('webpack-dev-middleware')(compiler, webpackDevOptions));
+app.use(require('webpack-hot-middleware')(compiler));
+
 app.use('*', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 })
