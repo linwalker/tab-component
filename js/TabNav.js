@@ -6,17 +6,14 @@ class TabNav extends Component {
     }
     getTabNav = () => {
         const { panels } = this.props;
-        return (
-            <div>
-                {
-                    panels.map((item) => {
-                        return(
-                            <li>{item}</li>
-                        )
-                    })
-                }
-            </div>
-        )
+        return panels.map((item) => {
+            if (!item) { return; }
+            return (
+                <li>
+                    {item}
+                </li>
+            )
+        })
     }
     render() {
         return (
