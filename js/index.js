@@ -11,9 +11,9 @@ class App extends Component {
         return (
             <div>
                 <Tabs>
-                    <TabPane tab={'Tab 1'}>item1</TabPane>
-                    <TabPane tab={'Tab 2'}>item2</TabPane>
-                    <TabPane tab={'Tab 3'}>item3</TabPane>
+                    <TabPane tab={'Tab-1'}>item1</TabPane>
+                    <TabPane tab={'Tab-2'}>item2</TabPane>
+                    <TabPane tab={'Tab-3'}>item3</TabPane>
                 </Tabs>
             </div>
         )

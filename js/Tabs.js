@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import TabNav from './TabNav';
 import TabContent from './TabContent';
-
 class Tab extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +17,7 @@ class Tab extends Component {
         const { children } = this.props;
         return (
             <TabContent 
-                panels={ children }
+                panels={children}
             />
         )
     }
