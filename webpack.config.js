@@ -7,7 +7,7 @@ module.exports = {
         './js/index.js',
     ],
     output: {
-        path: __dirname +  '/build',
+        path: __dirname + '/build',
         filename: 'bundle.js',
         publicPath: '/static/',
     },
@@ -19,9 +19,14 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                 }
-            }
+            },
+            {
+                test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
         ]
     },
+
     plugins: [
         // new webpack.NoErrorsPlugin(),
         new webpack.HotModuleReplacementPlugin()

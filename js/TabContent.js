@@ -1,23 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component, cloneElement } from 'react';
+import classnames from 'classnames';
 
 class TabContent extends Component {
     constructor(props) {
         super(props);
     }
     getTabContent = () => {
-        const { panels } = this.props;
-        console.log(panels)
-        return panels.map( (item, index) => {
-            return <li key={index}>
-                {item.props.children}
-            </li>
-        })
+        const { classPrefix, panels, activeIndex } = this.props;
+
+        return React.Children.map(panels, (child) => {
+            if (!child) { return };
+
+            const order = parseInt(child.props.order, 10);
+            const isActive = activeIndex === order;
+            return React.cloneElement(child, {
+                classPrefix,
+                isActive,
+                children: child.props.children,
+                key: `tabpane-${order}`,
+            });
+        });
     }
-    render () {
+    render() {
+        const { classPrefix } = this.props;
+
+        const classes = classnames({
+            [`${classPrefix}-content`]: true
+        })
+
         return (
-            <ul>
+            <div className={classes}>
                 {this.getTabContent()}
-            </ul>
+            </div>
         )
     }
 }
